@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lista_deseos",
+  "info": {
+    "singularName": "lista-deseo",
+    "pluralName": "lista-deseos",
+    "displayName": "Lista Deseo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true,
+      "unique": false,
+      "default": "Mi Lista de Deseos"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "inversedBy": "lista_deseos"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

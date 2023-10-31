@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macrocategorias",
+  "info": {
+    "singularName": "macrocategoria",
+    "pluralName": "macrocategorias",
+    "displayName": "Macrocategoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 200
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::categoria.categoria",
+      "mappedBy": "macrocategoria"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "singularName": "producto",
+    "pluralName": "productos",
+    "displayName": "Producto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 200
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "precio": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true,
+      "min": "0"
+    },
+    "stock": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true
+    },
+    "es_despachable": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "portada": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subcategoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subcategoria.subcategoria",
+      "inversedBy": "productos"
+    },
+    "lista_deseos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lista-deseo.lista-deseo",
+      "mappedBy": "productos"
+    },
+    "marca": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::marca.marca",
+      "inversedBy": "productos"
+    }
+  }
+}
