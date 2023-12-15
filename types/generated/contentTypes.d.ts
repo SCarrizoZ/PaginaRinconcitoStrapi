@@ -965,6 +965,7 @@ export interface ApiProductoProducto extends Schema.CollectionType {
       'manyToOne',
       'api::marca.marca'
     >;
+    imagenes_secundarias: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

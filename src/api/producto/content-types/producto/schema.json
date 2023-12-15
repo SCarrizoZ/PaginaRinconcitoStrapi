@@ -63,6 +63,14 @@
       "relation": "manyToOne",
       "target": "api::marca.marca",
       "inversedBy": "productos"
+    },
+    "imagenes_secundarias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
