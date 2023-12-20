@@ -966,6 +966,20 @@ export interface ApiProductoProducto extends Schema.CollectionType {
       'api::marca.marca'
     >;
     imagenes_secundarias: Attribute.Media;
+    descuento: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: '0';
+      }> &
+      Attribute.DefaultTo<'0'>;
+    especificaciones: Attribute.Text & Attribute.Required;
+    veces_vendido: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: '0';
+      }> &
+      Attribute.DefaultTo<'0'>;
+    tallas: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

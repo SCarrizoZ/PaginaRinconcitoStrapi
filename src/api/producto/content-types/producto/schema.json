@@ -71,6 +71,25 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "descuento": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true,
+      "min": "0"
+    },
+    "especificaciones": {
+      "type": "text",
+      "required": true
+    },
+    "veces_vendido": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0",
+      "min": "0"
+    },
+    "tallas": {
+      "type": "json"
     }
   }
 }
